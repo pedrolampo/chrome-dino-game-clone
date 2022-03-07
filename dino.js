@@ -68,9 +68,11 @@ function handleJump(delta) {
 
 function onJump(e) {
     if (e.type == 'touchstart') {
+        if (isJumping) return;
         yVelocity = JUMP_SPEED;
         isJumping = true;
     }
+
     if (e.code !== 'Space' || isJumping) return;
 
     yVelocity = JUMP_SPEED;
